@@ -1,0 +1,12 @@
+<p>product-form works!</p>
+<p>
+    Email: <br>
+    <input type="email" [formControl]="emailctrl" >
+</p>
+<p *ngIf="emailctrl.errors && emailctrl.dirty">
+    <small *ngIf="emailCtrl.hasError('required') && emailctrl.dirty">The Camp Is required</small>
+    <small *ngIf="emailCtrl.hasError('maxlength') && emailctrl.dirty">Es Muy Largo</small>
+    <small *ngIf="emailCtrl.hasError('minlength') && emailctrl.dirty">Es Muy Corto</small>
+</p>
+<button [disabled]="emailctrl.invalid" type="button" (click)="getEmail($event)">Save</button>
+
